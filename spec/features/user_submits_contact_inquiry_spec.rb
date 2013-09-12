@@ -15,6 +15,7 @@ feature "User submits a contact inquiry" do
   it "submits contact inquiry" do
     # Visit the page containing the new event form
     visit '/inquiries/new'
+    # save_and_open_page
 
     # Fill in the input field with the 'Location' label
     fill_in "Subject", with: "Dogs are awesome"
@@ -29,5 +30,23 @@ feature "User submits a contact inquiry" do
     click_on "Submit"
 
     expect(page).to have_content "Inquiry was successfully submitted."
+  end
+
+   it "attempts to submit with filling out first name" do
+    # Visit the page containing the new event form
+    visit '/inquiries/new'
+    # save_and_open_page
+
+    # Fill in the input field with the 'Location' label
+    fill_in "Subject", with: "Dogs are awesome"
+
+    fill_in "Description", with: "Dogs are really awesome"
+
+    fill_in "Last Name", with: "Doe"
+
+    fill_in "Email Address", with: "fake@fake.com"
+    click_on "Submit"
+
+    expect(page).to have_content "First name can't be blank"
   end
 end
