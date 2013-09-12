@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Valid email address:</strong>
+  <%= @dog.valid_email_address %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @dog.subject %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @dog.description %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @dog.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @dog.last_name %>
+</p>
+
+<%= link_to 'Edit', edit_dog_path(@dog) %> |
+<%= link_to 'Back', dogs_path %>
