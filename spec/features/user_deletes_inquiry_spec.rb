@@ -10,11 +10,14 @@ feature "User deletes a contact inquiry" do
 
   
   it "deletes from list of inquiries" do
-    Inquiry.destroy_all
     inquiry1 = FactoryGirl.create(:inquiry)
+    inquiry2 = FactoryGirl.create(:inquiry)
 
     visit '/inquiries'
-    click_link "Destroy"
+    within(".inquiry_#{inquiry1.id}") do
+      click_link "Destroy"
+    end
+
     expect(page).to_not have_content inquiry1.first_name
   end
 

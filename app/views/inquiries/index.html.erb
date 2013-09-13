@@ -16,7 +16,7 @@
 
   <tbody>
     <% @inquiries.each do |inquiry| %>
-      <tr>
+      <tr class="inquiry_<%= inquiry.id %>">
         <td><%= inquiry.subject %></td>
         <td><%= inquiry.description %></td>
         <td><%= inquiry.first_name %></td>
