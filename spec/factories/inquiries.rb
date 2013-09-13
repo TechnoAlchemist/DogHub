@@ -4,7 +4,7 @@ FactoryGirl.define do
   factory :inquiry do
     subject "MyString"
     description "MyText"
-    first_name "MyString"
+    first_name "John"
     last_name "MyString"
     email_address "MyString"
   end

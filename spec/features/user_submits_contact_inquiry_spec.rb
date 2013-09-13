@@ -32,7 +32,7 @@ feature "User submits a contact inquiry" do
     expect(page).to have_content "Inquiry was successfully submitted."
   end
 
-   it "attempts to submit with filling out first name" do
+   it "attempts to submit without filling out first name" do
     # Visit the page containing the new event form
     visit '/inquiries/new'
     # save_and_open_page
